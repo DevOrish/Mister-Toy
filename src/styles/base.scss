@@ -1,0 +1,12 @@
+main {
+  min-height: calc(100vh - 183px);
+}
+
+.add-btn{
+   margin: 15px auto;
+   display: flex;
+}
+
+.swal2-popup.swal2-toast .swal2-title {
+  font-size: 2.5rem !important;
+}
