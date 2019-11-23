@@ -1,6 +1,13 @@
+$body-font-family : 'shadowlight';
+
+body{
+  font-family: $body-font-family;
+}
+
 main {
   min-height: calc(100vh - 183px);
 }
+
 
 .add-btn{
    margin: 15px auto;
