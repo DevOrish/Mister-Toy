@@ -1,5 +1,5 @@
 <template>
-  <v-footer v-bind="localAttrs" padless>
+  <v-footer v-bind="localAttrs" padless elevation="20">
     <v-card flat tile width="100%" class="grey text-center size">
       <v-divider></v-divider>
       <v-card-text class="white--text">

@@ -1,0 +1,38 @@
+.home {
+  line-height: 0;
+  position: relative;
+}
+
+.hero {
+  width: 100%;
+}
+
+.top-sentence {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  font-size: 4rem;
+  font-weight: 400;
+}
+.bottom-btn {
+  position: absolute;
+  top: 80%;
+  bottom: 5%;
+  right: 23%;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.671);
+  width: 50%;
+  font-size: 4rem;
+  font-weight: bold;
+  border-radius: 20px;
+  outline: none;
+  transition: 0.3s all ease-in-out;
+  box-shadow: -18px 16px 15px 0px rgba(0, 0, 0, 0.75);
+
+  &:hover {
+    background-color: rgba(233, 233, 233, 0.849);
+    font-size: 4.3rem;
+    box-shadow: -19px 17px 16px 6px rgba(0, 0, 0, 0.75);
+  }
+}

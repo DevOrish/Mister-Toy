@@ -7,6 +7,7 @@
 
 
 <script>
+// HomePage
 //GET SINGLE TOY BY ID FROM SERVER
 //HANDLE EMPTY TOY EDIT, HANDLE EMPTY TOYS SCENARIOS
 import toyList from "../components/Toy-List.vue";
