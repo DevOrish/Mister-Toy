@@ -12,9 +12,6 @@
 
 <script>
 
-// TOY REMOVE DOSENT WORK 
-//same error with edits and removes - undefined ID
-
 import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
 
@@ -27,10 +24,28 @@ export default {
   },
   created() {
     this.$store.dispatch("loadToys");
+    this.$store.watch(
+      state => {
+        return this.$store.getters.userMsg;
+      },
+      msg => {
+        if (msg) {
+          const Toast = this.$swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000
+          });
+          Toast.fire({
+            type: msg.type,
+            title: msg.txt
+          });
+        }
+      }
+    );
   },
 
   data: () => ({
-    //
   })
 };
 </script>

@@ -1,5 +1,3 @@
-    
-    
 <template>
   <v-hover>
     <template v-slot="{ hover }">
@@ -12,12 +10,10 @@
             <v-list-item-subtitle v-if="toy.inStock">Toy in stock!</v-list-item-subtitle>
             <v-list-item-subtitle v-else>Currently out of stock!</v-list-item-subtitle>
           </v-list-item-content>
-
           <v-list-item-avatar tile size="80" color="grey">
             <img :src="toy.imgUrl" alt="toy img" />
           </v-list-item-avatar>
         </v-list-item>
-
         <v-card-actions>
           <v-btn class="details-link">
             <router-link :to="'/details/'+toy._id">Details</router-link>
@@ -31,7 +27,6 @@
     </template>
   </v-hover>
 </template>
-
 
 <script>
 export default {
@@ -50,9 +45,7 @@ export default {
         confirmButtonText: "Yes, delete it!"
       }).then(result => {
         if (result.value) {
-          this.$emit("remove", toyId);
-          console.log(toyId);
-          
+          this.$emit("remove", toyId);          
         } else
           this.$store.commit({
             type: "setMsg",

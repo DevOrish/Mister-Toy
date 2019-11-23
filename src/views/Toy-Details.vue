@@ -14,7 +14,7 @@
     </v-card-text>
 
     <v-card-actions>
-      <v-btn @click="showImg" color="grey" text>Watch</v-btn>
+      <v-btn @click="showImg">Watch</v-btn>
       <v-btn color="grey" @click="goToToys" text>Back to toys</v-btn>
     </v-card-actions>
   </v-card>
@@ -34,7 +34,9 @@ export default {
         imageUrl: this.toy.imgUrl,
         imageWidth: 400,
         imageHeight: 350,
-        imageAlt: `${this.toy.name} image`
+        imageAlt: `${this.toy.name} image`,
+        confirmButtonText: 'Close',
+        confirmButtonColor: 'grey',
       });
     },
     goToToys(){
@@ -46,7 +48,7 @@ export default {
     this.$store.dispatch("loadToys").then(() => {
       var toyId = this.$route.params.id;
       if (toyId) {
-        var toy = this.$store.commit("setId", +toyId);
+        var toy = this.$store.commit("setId", toyId);
         this.toy = JSON.parse(JSON.stringify(this.$store.getters.getToyById));
       }
     });

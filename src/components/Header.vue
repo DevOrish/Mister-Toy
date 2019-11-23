@@ -2,10 +2,13 @@
   <div>
     <v-toolbar prominent src="@/assets/img/head-bgc1.jpg">
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>
-        <p class="nav-bar-p">Mister Toy</p>
-      </v-toolbar-title>
+      <v-img
+      src="@/assets/img/logo2.png"
+      aspect-ratio="1"
+      contain
+      max-width="250"
+      max-height="150"
+    ></v-img>
 
       <v-spacer></v-spacer>
 

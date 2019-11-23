@@ -22,17 +22,17 @@ export default new Vuex.Store({
     remove(state, { toyId }) {
       const idx = state.toys.findIndex(toy => toy._id === toyId)
       state.toys.splice(idx, 1)
-      this.commit({ type: 'setMsg', msg: { type: 'success', txt: 'Toy Removed succesfully!' } })
+      this.commit({ type: 'setMsg', msg: { type: 'success', txt: 'Toy Removed succesfully' } })
     },
     saveToy(state, { toyToSave }) {
       var idx = state.toys.findIndex(toy => toy._id === toyToSave._id)
       if (idx !== -1) {
         state.toys.splice(idx, 1, toyToSave)
-        this.commit({ type: 'setMsg', msg: { type: 'success', txt: 'Toy edited succesfully!' } })
+        this.commit({ type: 'setMsg', msg: { type: 'success', txt: 'Toy edited succesfully' } })
       }
       else {
-        state.toys.unshift(toyToSave)
-        this.commit({ type: 'setMsg', msg: { type: 'success', txt: 'Toy added succesfully!' } })
+        state.toys.push(toyToSave)
+        this.commit({ type: 'setMsg', msg: { type: 'success', txt: 'Toy added succesfully' } })
       }
       router.push('/toy')
     },
@@ -75,7 +75,6 @@ export default new Vuex.Store({
     userMsg(state) {
       return state.userMsg
     }
-
   },
   modules: {
   }

@@ -1,14 +1,14 @@
 <template>
   <section>
-    <v-btn x-large center class="details-link add-btn">
-      <router-link to="/edit">Add new toy</router-link>
-    </v-btn>
+    <v-btn x-large center class="details-link add-btn" @click="addNewToy">Add new toy</v-btn>
     <toy-list :toys="toys" @remove="remove"></toy-list>
   </section>
 </template>
 
 
 <script>
+//GET SINGLE TOY BY ID FROM SERVER
+//HANDLE EMPTY TOY EDIT, HANDLE EMPTY TOYS SCENARIOS
 import toyList from "../components/Toy-List.vue";
 export default {
   data() {
@@ -25,30 +25,12 @@ export default {
   methods: {
     remove(toyId) {
       this.$store.dispatch({ type: "remove", toyId });
+    },
+    addNewToy() {
+      this.$router.replace("/edit");
     }
   },
-  created() {
-    this.$store.dispatch("loadToys");
-    this.$store.watch(
-      state => {
-        return this.$store.getters.userMsg;
-      },
-      msg => {
-        if (msg) {
-          const Toast = this.$swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000
-          });
-          Toast.fire({
-            type: msg.type,
-            title: msg.txt
-          });
-        }
-      }
-    );
-  },
+  created() {},
   watch: {}
 };
 </script>

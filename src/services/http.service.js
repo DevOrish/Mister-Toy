@@ -34,7 +34,6 @@ function put(url, data) {
         .catch(_handleError)
 }
 
-
 export default {
     get,
     delete: remove,

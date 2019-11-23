@@ -16,7 +16,7 @@ function makeId(length = 9) {
     for (var i = 0; i < length; i++) {
         num += possible.charAt(Math.floor(Math.random() * possible.length));
     }
-    return +num;
+    return num;
 }
 
 export default {
